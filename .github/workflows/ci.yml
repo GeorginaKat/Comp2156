@@ -1,4 +1,5 @@
 name: CI
+
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
@@ -26,11 +27,15 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: node_modules # Take any latest cache if failed to find it for current package-lock.json  
-          
+          restore-keys: node_modules # Take any latest cache if failed to find it for current package-lock.json
+
       # Install dependencies
       - name: Install dependencies
         run: npm install
+
+      # Fix permissions (added to fix react-scripts error)
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/react-scripts
 
       # Build React app
       - name: Build the app
