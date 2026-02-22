@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Student ID: 101524209</h1>
-      <h1>Student ID: Put Your Student Name</h1>
+      <h1>Student ID: Georgina Kategiannis</h1>
       <h1>Student Information System</h1>
       <h5>Powered By: moxDroid Labs Inc. || DevOps</h5>
       <StudentForm addStudent={addStudent} />
